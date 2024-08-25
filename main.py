@@ -1,41 +1,8 @@
 import streamlit as st
 from pathlib import Path
-import fonts_config
 from streamlit_option_menu import option_menu
-import os
 
-# 폰트 파일이 실제로 존재하는지 확인하는 함수
-def check_font_path():
-    font_path = '/app/fonts/NanumSquareL.otf'
-    if not os.path.exists(font_path):
-        st.error(f"Font file not found: {font_path}")
-        return None
-    return font_path
-
-font_path = check_font_path()
-
-# 폰트 경로가 유효할 때만 CSS 적용
-if font_path:
-    st.markdown(
-        f"""
-        <style>
-        @font-face {{
-            font-family: 'NanumSquare';
-            src: url('{font_path}');
-        }}
-        html, body, [class*="css"] {{
-            font-family: 'NanumSquare';
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-try:
-    fonts_config.setup_fonts()
-except Exception as e:
-    st.error(f"Error in fonts_config.setup_fonts(): {e}")
-
+# st.set_page_config는 반드시 스크립트의 가장 위쪽에서 호출되어야 합니다.
 st.set_page_config(
     page_title="메인 메뉴",
     layout="wide",
