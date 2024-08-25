@@ -174,8 +174,9 @@ elif selected_option == "시군구별 동물소유자수 및 동물소유자당�
     plt.title('시군구별 동물소유자수 및 동물소유자당동물등록수', fontproperties=fm.FontProperties(fname=fonts_config.font_path))
     fig.tight_layout()
 
-    ax1.legend(loc='upper left')
-    ax2.legend(loc='upper right')
+    # 범례에 폰트 적용
+    legend1 = ax1.legend(loc='upper left', prop=fm.FontProperties(fname=fonts_config.font_path))
+    legend2 = ax2.legend(loc='upper right', prop=fm.FontProperties(fname=fonts_config.font_path))
 
     st.pyplot(fig)
 
