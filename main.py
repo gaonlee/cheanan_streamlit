@@ -2,7 +2,23 @@ import streamlit as st
 from pathlib import Path
 import fonts_config
 from streamlit_option_menu import option_menu
+import streamlit as st
 
+# Streamlit 앱에서 사용할 폰트 설정을 CSS로 지정합니다.
+st.markdown(
+    """
+    <style>
+    @font-face {
+        font-family: 'NanumSquare';
+        src: url('/app/fonts/NanumSquareL.otf'); /* 폰트 파일 경로를 지정합니다. */
+    }
+    html, body, [class*="css"] {
+        font-family: 'NanumSquare'; /* 위에서 정의한 폰트를 기본 폰트로 설정합니다. */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 fonts_config.setup_fonts()
 

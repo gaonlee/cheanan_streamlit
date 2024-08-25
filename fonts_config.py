@@ -2,6 +2,7 @@ import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 import os
 
+
 def setup_fonts():
     font_path = '/app/fonts/NanumSquareL.otf'  # Streamlit 클라우드에서의 폰트 경로
     if os.path.exists(font_path):
