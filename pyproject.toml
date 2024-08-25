@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cheonan-streamlit"
+version = "0.1.0"
+description = ""
+authors = ["gaonlee <leemil1211@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit-option-menu = "^0.3.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
