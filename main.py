@@ -2,14 +2,12 @@ import streamlit as st
 from pathlib import Path
 from streamlit_option_menu import option_menu
 
-# st.set_page_config는 반드시 스크립트의 가장 위쪽에서 호출되어야 합니다.
 st.set_page_config(
     page_title="메인 메뉴",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
-# 페이지 딕셔너리 설정
 PAGES = {
     "Main": "main_page",
     "천안 현황": "pages/1_EDA.py",
@@ -33,7 +31,6 @@ def main_page():
         """,
         unsafe_allow_html=True
     )
-# 사이드바 메뉴 설정 및 스타일 적용
 with st.sidebar:
     try:
         selection = option_menu("메인 메뉴", list(PAGES.keys()),
@@ -49,7 +46,6 @@ with st.sidebar:
     except Exception as e:
         st.error(f"Error in sidebar option menu: {e}")
 
-# 선택된 페이지 실행
 page = PAGES.get(selection)
 if page == "main_page":
     main_page()

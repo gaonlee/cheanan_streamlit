@@ -4,18 +4,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-# 한글 폰트 설정
-font_path = "fonts/NanumSquareL.otf"  # 폰트 경로
+font_path = "fonts/NanumSquareL.otf"
 fontprop = fm.FontProperties(fname=font_path)
 
-# 데이터 로드
-DATA_PATH = "data"  # 실제 데이터 경로로 변경하세요
+DATA_PATH = "data"
 df_card_1 = pd.read_csv(f"{DATA_PATH}/TOTAL_BC1_MM_CCND_CUST_CRTR_CCND_CSPT_SGG_MG.csv", encoding='cp949')
 df_card_2 = pd.read_csv(f"{DATA_PATH}/TOTAL_BC1_MM_CCND_CUST_CRTR_CCND_EXCL_LC_CSPT_SGG_MG.csv", encoding='cp949')
 df_card_3 = pd.read_csv(f"{DATA_PATH}/TOTAL_BC1_MM_CCND_EXCL_RSDT_CRTR_CCND_CSPT_SGG_MG.csv", encoding='cp949')
 df_card_4 = pd.read_csv(f"{DATA_PATH}/TOTAL_BC1_MM_LC_CRTR_TOBIZ_SLS_SZ_MG.csv", encoding='cp949')
 
-# Streamlit 레이아웃 구성
 st.title("기타 참고자료")
 
 # 시군구별 전체이용건수 시각화
@@ -54,7 +51,6 @@ for year in years:
 
     fig, ax1 = plt.subplots(figsize=(12, 6))
 
-    # 첫 번째 y축 (이용건수) 막대 그래프
     color = 'tab:blue'
     ax1.set_xlabel('기준연월', fontproperties=fontprop)
     ax1.set_ylabel('전체이용건수', color=color, fontproperties=fontprop)
@@ -63,7 +59,6 @@ for year in years:
     ax1.set_xticks(x)
     ax1.set_xticklabels(df_year['기준연월'], fontproperties=fontprop)
 
-    # 두 번째 y축 (이용금액) 막대 그래프
     ax2 = ax1.twinx()
     color = 'tab:orange'
     ax2.set_ylabel('전체이용금액', color=color, fontproperties=fontprop)
@@ -87,7 +82,6 @@ for year in years:
 
     fig, ax1 = plt.subplots(figsize=(12, 6))
 
-    # 첫 번째 y축 (이용건수) 막대 그래프
     color = 'tab:blue'
     ax1.set_xlabel('기준연월', fontproperties=fontprop)
     ax1.set_ylabel('전체이용건수', color=color, fontproperties=fontprop)
@@ -96,7 +90,6 @@ for year in years:
     ax1.set_xticks(x)
     ax1.set_xticklabels(df_year['기준연월'], fontproperties=fontprop)
 
-    # 두 번째 y축 (이용금액) 막대 그래프
     ax2 = ax1.twinx()
     color = 'tab:orange'
     ax2.set_ylabel('전체이용금액', color=color, fontproperties=fontprop)

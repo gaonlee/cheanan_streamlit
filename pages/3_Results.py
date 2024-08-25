@@ -3,32 +3,27 @@ import pandas as pd
 
 st.markdown("<hr style='border: 2px solid #0078D7;'>", unsafe_allow_html=True)
 
-# 제목 및 첫 번째 섹션
 st.markdown("## 📍관광 선진 사례 (1)")
+
 st.markdown("### 펫츠고 트래블")
+
 st.markdown("""
 - 반려동물 동반 전문 여행사. 반려동물 좌석이 제공되는 버스, 열차, 제주 전세기를 이용해 관광 명소를 반려동물과 함께 여행할 수 있는 상품 제공
 - 천안에도 반려동물 친화시설 중심 관광 코스 개발 후 상품 운영 가능
 """)
 
-# 이미지 경로 설정
 image_path = "images/관광 선진 사례_1.png"
-
-# 이미지 삽입
 st.image(image_path, use_column_width=True)
 
 st.markdown("<hr style='border: 2px solid #0078D7;'>", unsafe_allow_html=True)
 
-# 제목
 st.markdown("## 📍관광 선진 사례 (2) - 반려동물 관광친화도시")
 
-# 설명 텍스트
 st.markdown("""
 반려동물 관광친화도시: 반려동물과 함께 여행하면서 자유롭게 숙박, 체험, 쇼핑 등 관광활동이 가능한 곳, 
 선정된 지자체는 최대 4년간 연간 국비 2억 5천만 원을 지원 받음
 """)
 
-# 표 데이터
 data = {
     "지역": ["충남 태안군", "울산 광역시", "경기 포천시", "전남 순천시"],
     "선정시기 및 주요 콘텐츠": [
@@ -40,25 +35,22 @@ data = {
     "비고": ["천안과 같은 충청남도에서 채택된 사례", "", "", ""]
 }
 
-# 데이터프레임 생성
 df = pd.DataFrame(data)
-
-# 표 표시
 st.table(df)
 
-# 출처 텍스트
 st.caption("출처: 이해리 기자, '2024년 반려동물 친화관광도시'로 포천시와 순천시 선정 [헬스조선], 2024.03.05.; 한국관광공사, '2023 반려동물 친화관광도시에 울산광역시, 태안군 선정', 보도자료, 2023.04.04.")
 
 st.markdown("<hr style='border: 2px solid #0078D7;'>", unsafe_allow_html=True)
 
-# 이미지 경로 설정
-image_path = "images/태안 성공 사례.png"
 
-# 이미지 삽입
+image_path = "images/태안 성공 사례.png"
 st.image(image_path, use_column_width=True)
 
-st.markdown("## 📌태안의 성공 사례를 참고,\n\n"
-            "# 천안을 반려동물 관광도시로")
+st.markdown("""
+## 📌태안의 성공 사례를 참고,
+
+# <span style="color:red;">천안을 반려동물 관광도시로</span>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 - 태안은 '2023 반려동물 친화관광도시' 공모에 최종 선정돼 20억 원(국비·지방비)을 확보
