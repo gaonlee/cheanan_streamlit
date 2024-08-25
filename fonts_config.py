@@ -1,9 +1,9 @@
-import matplotlib.font_manager as fm
-import matplotlib.pyplot as plt
 import os
 
 def setup_fonts():
-    font_path = '/app/fonts/NanumSquareL.otf'  # Streamlit 클라우드에서의 폰트 경로
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    font_path = os.path.join(base_dir, 'fonts', 'NanumSquareL.otf')
+    
     if os.path.exists(font_path):
         font_name = fm.FontProperties(fname=font_path).get_name()
         plt.rc('font', family=font_name)
