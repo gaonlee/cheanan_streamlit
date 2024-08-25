@@ -88,6 +88,19 @@ elif selected_option == "DBSCAN + K-means":
         plt.colorbar(scatter, ax=ax, label='Cluster')
         st.pyplot(fig)
         
+        st.markdown("""
+        <div style="
+        background-color: #f9f9f9; 
+        padding: 15px; 
+        border-radius: 10px; 
+        border: 2px solid #1c64a8;
+        ">
+        <p style="font-size: 1.2em; font-weight: bold;">
+           반려동물 친화시설이 몰려있는 곳이 확인됨.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+        
     else:
         st.error("Latitude ('위도') or Longitude ('경도') columns are missing or incorrectly named.")
 
@@ -135,9 +148,25 @@ elif selected_option == "DBSCAN + K-means":
             fill_opacity=0.7).add_to(map_clusters)
     
     st.markdown("""Cluster 0 : 보라, Cluster 1 : 하늘, Cluster 2 : 연두, Cluster 3 : 주황, Cluster 4 : 빨강""")
+    st.markdown("""
+    <div style="
+        background-color: #f9f9f9; 
+        padding: 15px; 
+        border-radius: 10px; 
+        border: 2px solid #1c64a8;
+        ">
+        <p style="font-size: 1.2em; font-weight: bold;">
+            * [표] 클러스터별 카테고리 빈도 확인<br> 
+            * 각 클러스터별로 어떤 카테고리의 특성이 높은지 비율로 나타내고 있다.<br>
+            예) Cluster 0 (보라색) - 카페 빈도가 높은 지역<br>
+            시설 카테고리 선정 시 참고할 수 있음.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
     st_folium(map_clusters, width=700, height=500)
-
-
+    
+    
 elif selected_option == "천안시 반려동물 친화시설 입지 추천":
     st.title('🚩천안시 반려동물 친화시설 입지 추천')
     target_areas = ['천안시 동남구', '천안시 서북구']
@@ -176,9 +205,27 @@ elif selected_option == "천안시 반려동물 친화시설 입지 추천":
             fill_opacity=0.7).add_to(map_clusters)
 
     st_folium(map_clusters, width=700, height=500)
-
+    
+    st.markdown("""
+    <div style="
+        background-color: #f9f9f9; 
+        padding: 15px; 
+        border-radius: 10px; 
+        border: 2px solid #1c64a8;
+        ">
+        <p style="font-size: 1.2em; font-weight: bold;">
+            마크가 찍힌 곳이 반려동물 친화시설이며,<br> 
+            이를 중심으로 반려동물 친화도시를 만들어나갈 수 있을 것으로 기대됨.<br>
+            천안 중심지에 반려동물 친화시설이 몰려있는 것이 확인됨<br>
+            또한 카테고리별로 색을 구분하여,<br>
+            시설 종류 선정 시 참고할 수 있음.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    st.markdown("Cluster 0 : 보라(카페), Cluster 1 : 하늘(박물관), Cluster 2 : 연두(카페, 문예회관, 미술회관), Cluster 3 : 주황(여행지), Cluster 4 : 빨강(문예회관)")
+    
 elif selected_option == "천안 관광 트렌드":
-    st.title("🚗천안 관광 트렌드 - 동북구 vs 서북구 비교")
+    st.title("🚗천안 관광 트렌드 - 동남구 vs 서북구 비교")
 
     col1, col2 = st.columns(2)
 
@@ -191,7 +238,7 @@ elif selected_option == "천안 관광 트렌드":
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader("동북구")
+        st.subheader("동남구")
         st.markdown("""
         **'문화관광' 검색건수가 가장 많음**
 
