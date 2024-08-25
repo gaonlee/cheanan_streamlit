@@ -11,6 +11,6 @@ def setup_fonts():
         print(f"Font loaded: {font_name}")
     else:
         print(f"Font not found at {font_path}")
-        plt.rc('font', family='DejaVu Sans')  # 폰트가 없을 경우 대체 폰트 사용
+        plt.rc('font', family='NanumGothic')  # 폰트가 없을 경우 대체 폰트 사용
 
 setup_fonts()
