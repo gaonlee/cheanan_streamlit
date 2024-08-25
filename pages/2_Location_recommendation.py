@@ -222,7 +222,7 @@ elif selected_option == "천안시 반려동물 친화시설 입지 추천":
         </p>
     </div>
     """, unsafe_allow_html=True)
-    st.markdown("Cluster 0 : 보라(카페), Cluster 1 : 하늘(박물관), Cluster 2 : 연두(카페, 문예회관, 미술회관), Cluster 3 : 주황(여행지), Cluster 4 : 빨강(문예회관)")
+    st.markdown("Cluster 0 : 보라, Cluster 1 : 하늘, Cluster 2 : 연두, Cluster 3 : 주황, Cluster 4 : 빨강")
     
 elif selected_option == "천안 관광 트렌드":
     st.title("🚗천안 관광 트렌드 - 동남구 vs 서북구 비교")
