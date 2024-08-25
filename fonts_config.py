@@ -13,5 +13,7 @@ def setup_fonts():
         print(f"Font loaded: {font_name}")
     else:
         print(f"Font not found at {font_path}")
+        # 추가적으로 기본 폰트로 설정
+        plt.rc('font', family='DejaVu Sans')
 
 setup_fonts()
